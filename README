@@ -1,0 +1,53 @@
+### README ###
+Author:  さりんじゃー 
+Twitter: @salinger001101
+https://github.com/Salinger/tokyo_r_diet
+
+R言語の学習のために、ダイエットを行いその結果を解析した。
+
+### ファイル構成 ###
+(1) training_result.csv
+    トレーニングの結果を記録したファイル。
+    2013/5/10 ~ 2013/07/04 まで。
+    複数の欠損値を含む。
+    カンマ区切り。
+
+    各列名の意味は以下の通り。[]の中は単位等。
+        "date":             日付 [YYYY/MM/DD]
+        "weight":           体重 [kg]
+        "bodyfat":          体脂肪 [%]
+        "fat":              体脂肪 [kg]
+        "run":              ランニング[min.]
+        "cycling":          自転車 [min.]
+        "warming_up":       準備体操 & 柔軟体操 [True or False]
+        "sit_up":           腹筋 [回]
+        "back_extension":   背筋 [回]
+        "press_up":         腕立て [回]
+        "squat":            スクワット [回]
+        "calf":             ふくらはぎの運動 [回]
+        "dumblell":         ダンベル [True or False]
+
+
+(2) training_checker.R
+    トレーニング結果の解析を行うためのプログラム。
+    使用言語はR。
+
+    以下の順に解析している。
+        a. データの読み込み
+        b. データの概要チェック
+        c. 体重の変化の確認（回帰分析）
+        d. 体脂肪の変化の確認（回帰分析）
+
+(3) date_weight.png, date_bodyfat.png
+    x: 日付 y: 体重・体脂肪 のグラフ。
+    training_checker.R を実行すると出力される。
+
+(4) diet_by_R.pdf
+    39回目のTokyo.Rで発表したLT資料。
+
+
+
+### 参考文献 ###
+[1] Rで線形単回帰分析, http://d.hatena.ne.jp/matsuou1/20110418/1303144024
+[2] R-tips, http://cse.naro.affrc.go.jp/takezawa/r-tips/r.html
+[3] 単回帰出力結果の読み方, http://hnami.or.tv/d/index.php?%C3%B1%B2%F3%B5%A2%BD%D0%CE%CF%B7%EB%B2%CC%A4%CE%C6%C9%A4%DF%CA%FD
